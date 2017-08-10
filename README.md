@@ -1,6 +1,6 @@
 # smartgrocer
 NY Developer Week Hack
-Simple chatbot made on PubNub platform to store list sample prices of grocery store items and let a user find the cheapest ingredients in their area. 
+Simple chatbot made on PubNub platform to store sample prices of grocery store items and let a user find the cheapest ingredients in their area. 
 
 Functions to implement
 
