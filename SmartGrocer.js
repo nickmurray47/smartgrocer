@@ -1,5 +1,3 @@
-//kimm5294@gmail.com
-//p:
 
 export default (request, response) => {
     const pubnub = require('pubnub');
