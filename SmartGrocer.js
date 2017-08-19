@@ -9,9 +9,6 @@ export default (request, response) => {
     db.set("1", {name: "Walgreens", id: "23456", items: [{rice: 2.99}, {beans: 3.99}]})
     .then(()=>{db.set( "2", {name: "Kam Man Food", id: "23456", items: [{rice: 1.99}, {beans: 3.99}]})});
 
-    //.then(()=>{
-    //db.set("rice", "https://www.livescience.com/50461-brown-rice-health-benefits-nutrition-facts.html")});
-
     let headersObject = request.headers;
     let paramsObject = request.params;
     let methodString = request.method;
@@ -103,7 +100,6 @@ export default (request, response) => {
                         sendGroceryList(senderID);
                         break;
                     case 'Find the cheapest bag of rice':
-                        // /(Find the cheapest) \w*/
                         findCheapestIngredient(senderID);
                         break;
                     case 'List recipes with rice':
@@ -188,21 +184,6 @@ export default (request, response) => {
                 //   title: "Call Postback",
                 //   payload: "Payload for first bubble",
                 }],
-            //   }, {
-            //     title: "touch",
-            //     subtitle: "Your Hands, Now in VR",
-            //     item_url: "https://www.oculus.com/en-us/touch/",
-            //     image_url: "http://messengerdemo.parseapp.com/img/touch.png",
-            //     buttons: [{
-            //       type: "web_url",
-            //       url: "https://www.oculus.com/en-us/touch/",
-            //       title: "Open Web URL"
-            //     }, {
-            //       type: "postback",
-            //       title: "Call Postback",
-            //       payload: "Payload for second bubble",
-            //     }]
-            // }]
             }
           }
         }
@@ -298,40 +279,6 @@ function findCheapestIngredient(recipientId) {
       callSendAPI(messageData);
     }).catch(()=>{console.log("broken")});
 }
-// function sendNutritionalInfo(recipientId) {
-//   let messageData = {
-//         recipient: {
-//           id: recipientId
-//         },
-//         message: {
-//           attachment: {
-//             type: "template",
-//             payload: {
-//               template_type: "generic",
-//               elements: [{
-//                 title: "rift",
-//                 subtitle: "Next-generation virtual reality",
-//                 item_url: "https://www.oculus.com/en-us/rift/",
-//                 image_url: "http://messengerdemo.parseapp.com/img/rift.png",
-//                 buttons: [{
-//                   type: "web_url",
-//                   url: "https://www.oculus.com/en-us/rift/",
-//                   title: "Open Web URL"
-//                 }, {
-//                   type: "postback",
-//                   title: "Call Postback",
-//                   payload: "Payload for first bubble",
-//                 }],
-//               }, ]
-//             }
-//           }
-//         }
-//       };
-
-//       callSendAPI(messageData);
-// }
-
-
     console.log('request',request); // Log the request envelope passed
     // Query parameters passed are parsed into the request.params object for you
     // console.log(paramsObject.a) // This would print "5" for query string "a=5
