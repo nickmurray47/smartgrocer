@@ -136,9 +136,7 @@ export default (request, response) => {
         };
 
         const url = "https://graph.facebook.com/v2.6/me/messages?access_token=" + PAGE_ACCESS_TOKEN;
-        console.log("waddup from outside api fetch call")
         return xhr.fetch(url, http_options).then((x) => {
-            console.log("sup from fetch call")
             const body = JSON.parse(x.body);
             return request.ok();
         });
